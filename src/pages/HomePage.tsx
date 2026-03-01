@@ -87,7 +87,7 @@ export function HomePage({ onNavigate, onViewProduct }: HomePageProps) {
               Solar & Electronics Supplier
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-              Stop Paying High Bills —
+              Stop Paying High Bills
               <br />
               <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">Start Saving with Solar!</span>
             </h1>
