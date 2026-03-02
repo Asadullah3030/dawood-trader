@@ -5,7 +5,7 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-const ADMIN_PASSWORD = 'asdf'; // Change this!
+const ADMIN_PASSWORD = 'dawood$11@'; // Change this!
 const AUTH_KEY = 'dt_admin_auth';
 
 interface AuthContextType {
@@ -21,13 +21,14 @@ const AuthContext = createContext<AuthContextType>({
 });
 
 export function AuthProvider({ children }: { children: ReactNode }) {
+  // sessionStorage use karo — tab close hone par auto logout
   const [isAuthenticated, setIsAuthenticated] = useState(
-    () => localStorage.getItem(AUTH_KEY) === 'true'
+    () => sessionStorage.getItem(AUTH_KEY) === 'true'
   );
 
   const login = (password: string): boolean => {
     if (password === ADMIN_PASSWORD) {
-      localStorage.setItem(AUTH_KEY, 'true');
+      sessionStorage.setItem(AUTH_KEY, 'true');
       setIsAuthenticated(true);
       return true;
     }
@@ -35,7 +36,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const logout = () => {
-    localStorage.removeItem(AUTH_KEY);
+    sessionStorage.removeItem(AUTH_KEY);
     setIsAuthenticated(false);
   };
 
