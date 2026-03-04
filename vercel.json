@@ -5,5 +5,10 @@
       "destination": "https://www.dawoodtrader.shop/$1",
       "permanent": true
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "NODE_VERSION": "22"
+    }
+  }
 }
